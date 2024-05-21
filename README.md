@@ -6,4 +6,6 @@ An example use of the Glance SDK, based on newer React Native
 
 ```sh
  npx react-native@0.72.10 init GlanceExample --version 0.72.10
+ yarn add react-redux redux-persist @react-native-async-storage/async-storage react-native-safe-area-context
+ cd ios; pod install; cd ..
 ```
