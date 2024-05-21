@@ -7,9 +7,7 @@ import SubHeader from '../shared/SubHeader';
 import Banner from '../shared/Banner';
 import Card from './Card';
 
-import GlanceIcon from '../../scaffolding/components/GlanceIcon';
-
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 const CARDS_JSON = [

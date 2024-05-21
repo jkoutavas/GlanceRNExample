@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image} from 'react-native';
-import {connect} from 'react-redux';
+import {StyleSheet} from 'react-native';
 import {Container, Content, Button, Text} from 'native-base';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
-import Banner from '../shared/Banner';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 export default class ClaimComplete extends Component {

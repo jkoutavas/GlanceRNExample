@@ -12,8 +12,8 @@ export default class Accounts extends Component {
         <HeaderDefault
           showHomeButton={true}
           showSettingsButton={true}
-          title="Accounts"></HeaderDefault>
-
+          title="Accounts"
+        />
         <Content>
           <AccountsWelcome />
           <AccountsList />

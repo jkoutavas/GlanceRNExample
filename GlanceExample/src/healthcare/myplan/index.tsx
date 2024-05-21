@@ -7,7 +7,7 @@ import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 
 class MyPlan extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class MyPlan extends Component {
     const plan = plans.filter(p => p.name === currentPlan)[0];
     return (
       <Container style={styles.component}>
-        <Header showHomeButton={true} showSettingsButton={true}></Header>
+        <Header showHomeButton={true} showSettingsButton={true} />
         <SubHeader color="orange" text="My Plan" />
 
         <Content contentContainerStyle={styles.content}>

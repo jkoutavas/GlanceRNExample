@@ -4,7 +4,7 @@ import {withNavigation} from '@react-navigation/compat';
 import {Body, Button, Header, Left, Right} from 'native-base';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../globalStyles';
 
 class LoginHeader extends Component {
   render() {
@@ -24,9 +24,7 @@ class LoginHeader extends Component {
             <Button
               onPress={() => this.props.navigation.navigate('Home')}
               transparent>
-              <GlanceIcon
-                name="icon-home-outline"
-                style={styles.home}></GlanceIcon>
+              <GlanceIcon name="icon-home-outline" style={styles.home} />
             </Button>
           )}
 
@@ -36,7 +34,8 @@ class LoginHeader extends Component {
               transparent>
               <GlanceIcon
                 name="icon-settings-outline"
-                style={styles.settings}></GlanceIcon>
+                style={styles.settings}
+              />
             </Button>
           )}
         </Right>

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, TouchableOpacity, Platform} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {Container, Content, Text, Button, Icon} from 'native-base';
+import {Container, Content, Text, Button} from 'native-base';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
@@ -20,7 +20,7 @@ class ChangePlan extends Component {
   }
 
   render() {
-    const {plans, currentPlan, navigation} = this.props;
+    const {plans, navigation} = this.props;
     // main column
     const mainColumn = (
       <View style={styles.mainColumn}>

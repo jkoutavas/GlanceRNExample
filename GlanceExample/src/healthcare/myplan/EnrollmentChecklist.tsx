@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, TouchableOpacity, Platform} from 'react-native';
-import {connect} from 'react-redux';
 import {Container, Content, Text, Button, Icon} from 'native-base';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 const CHECKLIST = [

@@ -23,8 +23,7 @@ class TopicsOptions extends Component {
           }}
           style={styles.option}>
           <View style={styles.background}>
-            <Image
-              source={require('../../../resources/images/support.png')}></Image>
+            <Image source={require('../../../resources/images/support.png')} />
           </View>
 
           <Text style={styles.text}>Call Now</Text>
@@ -37,7 +36,7 @@ class TopicsOptions extends Component {
             <Image source={require('../../../resources/images/calendar.png')} />
           </View>
 
-          <Text style={styles.text}>{`Schedule an\nAppointment`}</Text>
+          <Text style={styles.text}>{'Schedule an\nAppointment'}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity

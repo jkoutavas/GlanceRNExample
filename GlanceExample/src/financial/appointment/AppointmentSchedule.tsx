@@ -19,7 +19,7 @@ export default class AppointmentSchedule extends Component {
 
         <View style={styles.section}>
           <View style={styles.iconContainer}>
-            <GlanceIcon name="icon-location" style={styles.icon}></GlanceIcon>
+            <GlanceIcon name="icon-location" style={styles.icon} />
           </View>
 
           <View>
@@ -35,7 +35,8 @@ export default class AppointmentSchedule extends Component {
           <View style={styles.iconContainer}>
             <Image
               source={require('../../../resources/images/add-calendar.png')}
-              style={styles.calendar}></Image>
+              style={styles.calendar}
+            />
           </View>
 
           <Text style={styles.title}>Add to Calendar</Text>

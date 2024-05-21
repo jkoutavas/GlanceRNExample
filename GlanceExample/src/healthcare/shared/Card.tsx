@@ -4,7 +4,7 @@ import {Button, Text} from 'native-base';
 
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 
 export default class Card extends Component {
   render() {

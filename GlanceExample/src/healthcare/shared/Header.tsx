@@ -12,7 +12,7 @@ import {Body, Button, Header} from 'native-base';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 import {signalPresence} from '../../scaffolding/helpers/visitorSession';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 
 class HealthcareHeader extends Component {
   render() {
@@ -29,9 +29,7 @@ class HealthcareHeader extends Component {
                   this.props.navigation.navigate('Home');
                 }}
                 transparent>
-                <GlanceIcon
-                  name="icon-home-outline"
-                  style={styles.home}></GlanceIcon>
+                <GlanceIcon name="icon-home-outline" style={styles.home} />
               </Button>
             )}
 
@@ -41,7 +39,8 @@ class HealthcareHeader extends Component {
                 transparent>
                 <GlanceIcon
                   name="icon-settings-outline"
-                  style={styles.settings}></GlanceIcon>
+                  style={styles.settings}
+                />
               </Button>
             )}
           </View>
@@ -66,16 +65,12 @@ class HealthcareHeader extends Component {
                   this.props.navigation.navigate('CustomerService')
                 }
                 transparent>
-                <GlanceIcon
-                  name="icon-customer-support"
-                  style={styles.icon}></GlanceIcon>
+                <GlanceIcon name="icon-customer-support" style={styles.icon} />
               </Button>
               <Button
                 onPress={() => this.props.navigation.openDrawer()}
                 transparent>
-                <GlanceIcon
-                  name="drawer"
-                  style={styles.iconDrawer}></GlanceIcon>
+                <GlanceIcon name="drawer" style={styles.iconDrawer} />
               </Button>
             </View>
           </View>

@@ -4,7 +4,7 @@ import {Text} from 'native-base';
 
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 
 export default class Banner extends Component {
   render() {

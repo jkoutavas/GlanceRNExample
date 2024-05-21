@@ -1,26 +1,13 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, TextInput} from 'react-native';
-import {connect} from 'react-redux';
-import {
-  Container,
-  Content,
-  Button,
-  Text,
-  List,
-  ListItem,
-  Left,
-  Body,
-  Right,
-  Icon,
-} from 'native-base';
+import {View, StyleSheet, TextInput} from 'react-native';
+import {Container, Content, Button, Text} from 'native-base';
 
 import RadioButton from '../../scaffolding/components/RadioButton';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
-import Banner from '../shared/Banner';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 export default class ClaimForm extends Component {
@@ -54,14 +41,16 @@ export default class ClaimForm extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={styles.input}
                 value={this.state.name}
-                onChangeText={text => this.setState({name: text})}></TextInput>
+                onChangeText={text => this.setState({name: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Patient Date of Birth"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.dob}
-                onChangeText={text => this.setState({dob: text})}></TextInput>
+                onChangeText={text => this.setState({dob: text})}
+              />
               <View style={{flexDirection: 'row', marginVertical: 20}}>
                 <Text style={styles.questionText}>Sex</Text>
                 <RadioButton
@@ -85,16 +74,16 @@ export default class ClaimForm extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={styles.input}
                 value={this.state.address}
-                onChangeText={text =>
-                  this.setState({address: text})
-                }></TextInput>
+                onChangeText={text => this.setState({address: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Phone Number"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.phone}
-                onChangeText={text => this.setState({phone: text})}></TextInput>
+                onChangeText={text => this.setState({phone: text})}
+              />
               <Text style={[styles.questionText, {marginTop: 15}]}>
                 Patient relationship to Insured
               </Text>
@@ -137,18 +126,16 @@ export default class ClaimForm extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={styles.input}
                 value={this.state.injuryDate}
-                onChangeText={text =>
-                  this.setState({injuryDate: text})
-                }></TextInput>
+                onChangeText={text => this.setState({injuryDate: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Dates of Patient Unable to Work"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.unableToWorkDates}
-                onChangeText={text =>
-                  this.setState({unableToWorkDates: text})
-                }></TextInput>
+                onChangeText={text => this.setState({unableToWorkDates: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Hospitalization Dates"
@@ -157,7 +144,8 @@ export default class ClaimForm extends Component {
                 value={this.state.hospitalizationDates}
                 onChangeText={text =>
                   this.setState({hospitalizationDates: text})
-                }></TextInput>
+                }
+              />
             </View>
             <View style={styles.formSection}>
               <Text style={styles.formHeader}>Service Record</Text>
@@ -167,36 +155,32 @@ export default class ClaimForm extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={styles.input}
                 value={this.state.referringProvider}
-                onChangeText={text =>
-                  this.setState({referringProvider: text})
-                }></TextInput>
+                onChangeText={text => this.setState({referringProvider: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Date of Service"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.serviceDate}
-                onChangeText={text =>
-                  this.setState({serviceDate: text})
-                }></TextInput>
+                onChangeText={text => this.setState({serviceDate: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Procedures/Services"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.procedures}
-                onChangeText={text =>
-                  this.setState({procedures: text})
-                }></TextInput>
+                onChangeText={text => this.setState({procedures: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="$ Charges"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.charges}
-                onChangeText={text =>
-                  this.setState({charges: text})
-                }></TextInput>
+                onChangeText={text => this.setState({charges: text})}
+              />
             </View>
           </View>
           <View style={{marginTop: 30}}>

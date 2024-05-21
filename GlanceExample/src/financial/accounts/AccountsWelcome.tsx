@@ -29,7 +29,7 @@ export default class AccountsWelcome extends Component {
     return (
       <View style={styles.component}>
         <View style={styles.background}>
-          <GlanceIcon name="icon-hello" style={styles.icon}></GlanceIcon>
+          <GlanceIcon name="icon-hello" style={styles.icon} />
         </View>
 
         <Text style={styles.text}>Hello, {this.state.username}</Text>

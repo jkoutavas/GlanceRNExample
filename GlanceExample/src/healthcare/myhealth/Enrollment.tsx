@@ -1,26 +1,11 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, TextInput} from 'react-native';
-import {connect} from 'react-redux';
-import {
-  Container,
-  Content,
-  Button,
-  Text,
-  List,
-  ListItem,
-  Left,
-  Body,
-  Right,
-  Icon,
-} from 'native-base';
-
-import RadioButton from '../../scaffolding/components/RadioButton';
+import {View, StyleSheet, TextInput} from 'react-native';
+import {Container, Content, Button, Text} from 'native-base';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
-import Banner from '../shared/Banner';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 export default class ClaimForm extends Component {
@@ -32,7 +17,6 @@ export default class ClaimForm extends Component {
 
   render() {
     const {navigation} = this.props;
-    const {sex, relationship} = this.state;
 
     return (
       <Container style={styles.component}>
@@ -61,25 +45,24 @@ export default class ClaimForm extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={styles.input}
                 value={this.state.gymName}
-                onChangeText={text =>
-                  this.setState({gymName: text})
-                }></TextInput>
+                onChangeText={text => this.setState({gymName: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Gym/Health Club Address"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.gymAddress}
-                onChangeText={text =>
-                  this.setState({gymAddress: text})
-                }></TextInput>
+                onChangeText={text => this.setState({gymAddress: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="City"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.city}
-                onChangeText={text => this.setState({city: text})}></TextInput>
+                onChangeText={text => this.setState({city: text})}
+              />
               <View
                 style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <TextInput
@@ -88,9 +71,8 @@ export default class ClaimForm extends Component {
                   placeholderTextColor={'rgba(0,0,0,0.5)'}
                   style={[styles.input, {borderTopWidth: 0, width: '50%'}]}
                   value={this.state.state}
-                  onChangeText={text =>
-                    this.setState({state: text})
-                  }></TextInput>
+                  onChangeText={text => this.setState({state: text})}
+                />
                 <TextInput
                   autoCapitalize={'none'}
                   placeholder="ZIP"
@@ -100,7 +82,8 @@ export default class ClaimForm extends Component {
                     {borderTopWidth: 0, borderLeftWidth: 0, width: '50%'},
                   ]}
                   value={this.state.zip}
-                  onChangeText={text => this.setState({zip: text})}></TextInput>
+                  onChangeText={text => this.setState({zip: text})}
+                />
               </View>
               <TextInput
                 autoCapitalize={'none'}
@@ -108,16 +91,16 @@ export default class ClaimForm extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.phone}
-                onChangeText={text => this.setState({phone: text})}></TextInput>
+                onChangeText={text => this.setState({phone: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Start Date of Membership (mm/dd/yyyy)"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.startDate}
-                onChangeText={text =>
-                  this.setState({startDate: text})
-                }></TextInput>
+                onChangeText={text => this.setState({startDate: text})}
+              />
             </View>
           </View>
           <View style={{marginTop: 30}}>

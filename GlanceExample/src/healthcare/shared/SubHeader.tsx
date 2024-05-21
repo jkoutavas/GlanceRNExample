@@ -4,7 +4,7 @@ import {withNavigation} from '@react-navigation/compat';
 import {Text, Button, Header, Left, Right, Body} from 'native-base';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 
 class SubHeader extends Component {
   render() {
@@ -23,9 +23,7 @@ class SubHeader extends Component {
             }}
             transparent
             elevation={0}>
-            <GlanceIcon
-              name="icon-chevron"
-              style={styles.iconChevron}></GlanceIcon>
+            <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
             <Text uppercase={false} style={styles.back}>
               Back
             </Text>

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {Container, Content} from 'native-base';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
 import Card from './Card';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 const CARDS_JSON = [

@@ -7,7 +7,8 @@ export default class LoginImage extends Component {
       <View style={styles.view}>
         <Image
           source={require('../../../resources/images/glass-windows.png')}
-          style={styles.image}></Image>
+          style={styles.image}
+        />
       </View>
     );
   }

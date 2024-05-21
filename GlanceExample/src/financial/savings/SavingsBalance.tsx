@@ -10,13 +10,11 @@ export default class SavingsBalance extends Component {
       <View style={styles.balance.layout}>
         <Left style={styles.balance.left}>
           <View style={styles.balance.iconBackground}>
-            <GlanceIcon
-              name="icon-savings"
-              style={styles.balance.icon}></GlanceIcon>
+            <GlanceIcon name="icon-savings" style={styles.balance.icon} />
           </View>
 
           <View style={styles.balance.account}>
-            <Text style={styles.balance.name}>{`GLOBAL\nSAVINGS`}</Text>
+            <Text style={styles.balance.name}>{'GLOBAL\nSAVINGS'}</Text>
 
             <Text style={styles.balance.number}>8392</Text>
           </View>

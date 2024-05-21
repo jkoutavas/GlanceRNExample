@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import {Button, Text} from 'native-base';
+import {Text} from 'native-base';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 import {startSession} from '../../scaffolding/helpers/visitorSession';
 
@@ -8,7 +8,7 @@ export default class YourApplicationHelp extends Component {
   render() {
     return (
       <View style={styles.component}>
-        <GlanceIcon name="global-logo" style={styles.icon}></GlanceIcon>
+        <GlanceIcon name="global-logo" style={styles.icon} />
 
         <Text style={styles.title} allowFontScaling={false}>
           Global Investments Brokerage

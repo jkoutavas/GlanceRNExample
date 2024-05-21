@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Icon, Left, List, ListItem, Right, Text} from 'native-base';
+import {StyleSheet} from 'react-native';
+import {Left, List, ListItem, Right, Text} from 'native-base';
 
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
@@ -18,9 +18,7 @@ export default class TopicsList extends Component {
           </Left>
 
           <Right>
-            <GlanceIcon
-              name="icon-chevron"
-              style={styles.iconChevron}></GlanceIcon>
+            <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
           </Right>
         </ListItem>
 
@@ -30,9 +28,7 @@ export default class TopicsList extends Component {
           </Left>
 
           <Right>
-            <GlanceIcon
-              name="icon-chevron"
-              style={styles.iconChevron}></GlanceIcon>
+            <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
           </Right>
         </ListItem>
 
@@ -42,9 +38,7 @@ export default class TopicsList extends Component {
           </Left>
 
           <Right>
-            <GlanceIcon
-              name="icon-chevron"
-              style={styles.iconChevron}></GlanceIcon>
+            <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
           </Right>
         </ListItem>
 
@@ -54,9 +48,7 @@ export default class TopicsList extends Component {
           </Left>
 
           <Right>
-            <GlanceIcon
-              name="icon-chevron"
-              style={styles.iconChevron}></GlanceIcon>
+            <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
           </Right>
         </ListItem>
 
@@ -66,9 +58,7 @@ export default class TopicsList extends Component {
           </Left>
 
           <Right>
-            <GlanceIcon
-              name="icon-chevron"
-              style={styles.iconChevron}></GlanceIcon>
+            <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
           </Right>
         </ListItem>
       </List>

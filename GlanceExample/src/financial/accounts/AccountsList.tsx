@@ -10,7 +10,7 @@ class AccountsList extends Component {
       <View style={styles.component}>
         <List style={styles.list}>
           <ListItem itemDivider style={styles.divider}>
-            <GlanceIcon name="global-logo" style={styles.icon}></GlanceIcon>
+            <GlanceIcon name="global-logo" style={styles.icon} />
 
             <Text style={styles.title}>GLOBAL INVESTMENT ACCOUNTS</Text>
           </ListItem>
@@ -27,9 +27,7 @@ class AccountsList extends Component {
                 $10,156
               </Text>
 
-              <GlanceIcon
-                name="icon-chevron"
-                style={styles.iconChevron}></GlanceIcon>
+              <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
             </Right>
           </ListItem>
 
@@ -44,9 +42,7 @@ class AccountsList extends Component {
               <Text allowFontScaling={false} style={styles.amount}>
                 $12,987
               </Text>
-              <GlanceIcon
-                name="icon-chevron"
-                style={styles.iconChevron}></GlanceIcon>
+              <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
             </Right>
           </ListItem>
 
@@ -60,9 +56,7 @@ class AccountsList extends Component {
             </Left>
 
             <Right style={styles.right}>
-              <GlanceIcon
-                name="icon-chevron"
-                style={styles.iconChevron}></GlanceIcon>
+              <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
             </Right>
           </ListItem>
         </List>

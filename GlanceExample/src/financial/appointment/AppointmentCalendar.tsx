@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Calendar, LocaleConfig} from 'react-native-calendars';
+import {Calendar} from 'react-native-calendars';
 
 export default class AppointmentCalendar extends Component {
   render() {

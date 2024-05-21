@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, TextInput, Image} from 'react-native';
 import {connect} from 'react-redux';
-import {Container, Content, Button, Text, Picker, Icon} from 'native-base';
+import {Container, Content, Button, Text, Picker} from 'native-base';
 
 import {storeHowToPay} from '../../redux/healthcare';
 import RadioButton from '../../scaffolding/components/RadioButton';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
-import Banner from '../shared/Banner';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
@@ -82,9 +81,8 @@ class HowToPay extends Component {
                   placeholderTextColor={'rgba(0,0,0,0.5)'}
                   style={styles.input}
                   value={howToPay.name}
-                  onChangeText={text =>
-                    this.onChange('name', text)
-                  }></TextInput>
+                  onChangeText={text => this.onChange('name', text)}
+                />
               </View>
               <View style={{marginBottom: 15}}>
                 <Text style={styles.inputLabel}>
@@ -96,9 +94,8 @@ class HowToPay extends Component {
                   placeholderTextColor={'rgba(0,0,0,0.5)'}
                   style={styles.input}
                   value={howToPay.cardNumber}
-                  onChangeText={text =>
-                    this.onChange('cardNumber', text)
-                  }></TextInput>
+                  onChangeText={text => this.onChange('cardNumber', text)}
+                />
               </View>
               <View style={{marginBottom: 15}}>
                 <View
@@ -181,9 +178,8 @@ class HowToPay extends Component {
                     placeholderTextColor={'rgba(0,0,0,0.5)'}
                     style={[styles.input, {marginLeft: 5, width: '30%'}]}
                     value={howToPay.cvv}
-                    onChangeText={text =>
-                      this.onChange('cvv', text)
-                    }></TextInput>
+                    onChangeText={text => this.onChange('cvv', text)}
+                  />
                 </View>
               </View>
             </View>
@@ -205,9 +201,8 @@ class HowToPay extends Component {
                   placeholderTextColor={'rgba(0,0,0,0.5)'}
                   style={styles.input}
                   value={howToPay.routing}
-                  onChangeText={text =>
-                    this.onChange('routing', text)
-                  }></TextInput>
+                  onChangeText={text => this.onChange('routing', text)}
+                />
               </View>
               <View>
                 <Text style={styles.inputLabel}>Account Number</Text>
@@ -217,9 +212,8 @@ class HowToPay extends Component {
                   placeholderTextColor={'rgba(0,0,0,0.5)'}
                   style={styles.input}
                   value={howToPay.account}
-                  onChangeText={text =>
-                    this.onChange('account', text)
-                  }></TextInput>
+                  onChangeText={text => this.onChange('account', text)}
+                />
               </View>
             </View>
             <View

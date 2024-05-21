@@ -5,8 +5,8 @@ import GlanceIcon from '../scaffolding/components/GlanceIcon';
 export default class HomeLogo extends Component {
   render() {
     return (
-      <View syle={styles.component}>
-        <GlanceIcon name="logo-glance-new" style={styles.icon}></GlanceIcon>
+      <View style={styles.component}>
+        <GlanceIcon name="logo-glance-new" style={styles.icon} />
       </View>
     );
   }

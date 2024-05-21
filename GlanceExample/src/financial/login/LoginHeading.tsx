@@ -7,7 +7,7 @@ export default class LoginHeading extends Component {
   render() {
     return (
       <View style={styles.component}>
-        <GlanceIcon name="global-logo" style={styles.icon}></GlanceIcon>
+        <GlanceIcon name="global-logo" style={styles.icon} />
 
         <Text style={styles.text}>Global Investments</Text>
       </View>

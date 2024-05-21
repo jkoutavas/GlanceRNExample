@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import {Button, Text, Icon} from 'native-base';
+import {Text} from 'native-base';
 
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../globalStyles';
 
 class Card extends Component {
   render() {
@@ -40,7 +40,8 @@ class Card extends Component {
             <View>
               <GlanceIcon
                 name="icon-chevron"
-                style={[styles.iconChevron, styles.green]}></GlanceIcon>
+                style={[styles.iconChevron, styles.green]}
+              />
             </View>
           </View>
         </View>

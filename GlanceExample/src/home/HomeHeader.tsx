@@ -45,9 +45,7 @@ class HomeHeader extends Component {
             <Button
               onPress={() => this.props.navigation.popToTop()}
               transparent>
-              <GlanceIcon
-                name="icon-home-outline"
-                style={styles.icon}></GlanceIcon>
+              <GlanceIcon name="icon-home-outline" style={styles.icon} />
             </Button>
           )}
 
@@ -57,7 +55,8 @@ class HomeHeader extends Component {
             transparent>
             <GlanceIcon
               name={'icon-settings-outline'}
-              style={settingsIconStyles}></GlanceIcon>
+              style={settingsIconStyles}
+            />
           </Button>
         </Right>
       </Header>

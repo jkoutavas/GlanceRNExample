@@ -7,7 +7,7 @@ import {save_username} from '../../redux/app';
 
 import {placeholderTextColor} from '../../scaffolding/styles/form';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
-import Styles from '../../globalStyles';
+import {Styles} from '../globalStyles';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -37,7 +37,8 @@ class LoginForm extends Component {
             placeholderTextColor={placeholderTextColor}
             style={styles.input}
             value={this.state.username}
-            onChangeText={text => this.setState({username: text})}></TextInput>
+            onChangeText={text => this.setState({username: text})}
+          />
 
           <View style={styles.inputHeaderView}>
             <Text style={styles.inputHeader}>Password</Text>
@@ -48,7 +49,8 @@ class LoginForm extends Component {
             placeholderTextColor={placeholderTextColor}
             secureTextEntry={true}
             style={styles.input}
-            value={'password'}></TextInput>
+            value={'password'}
+          />
 
           <View style={{flexDirection: 'row', marginTop: 20}}>
             <Switch
@@ -78,9 +80,7 @@ class LoginForm extends Component {
               <Text style={styles.forgotText}>Forgot Username?</Text>
             </Left>
             <Right>
-              <GlanceIcon
-                name="icon-chevron"
-                style={styles.iconChevron}></GlanceIcon>
+              <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
             </Right>
           </ListItem>
           <ListItem style={{marginLeft: 0}}>
@@ -88,9 +88,7 @@ class LoginForm extends Component {
               <Text style={styles.forgotText}>Forgot Password?</Text>
             </Left>
             <Right>
-              <GlanceIcon
-                name="icon-chevron"
-                style={styles.iconChevron}></GlanceIcon>
+              <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
             </Right>
           </ListItem>
         </List>

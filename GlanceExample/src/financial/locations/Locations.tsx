@@ -10,7 +10,7 @@ export default class Locations extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <HeaderDefault showBackButton={true} title="Locations"></HeaderDefault>
+        <HeaderDefault showBackButton={true} title="Locations" />
 
         <Content>
           <LocationsSearch />

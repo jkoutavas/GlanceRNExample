@@ -103,8 +103,8 @@ export default class Home extends Component {
         let visitorID = await AsyncStorage.getItem(VISITOR_ID_MAP_KEY);
         if (visitorID === null || visitorID === '') {
           Alert.alert(
-            `Unable to connect to presence.`,
-            `Please make sure you have configured your Visitor ID.`,
+            'Unable to connect to presence.',
+            'Please make sure you have configured your Visitor ID.',
           );
           return;
         }
@@ -206,7 +206,8 @@ export default class Home extends Component {
               sessionStatus={this.state.sessionStatus}
               showImagePicker={this.showImagePicker}
               stopVisitorSession={stopVisitorSession}
-              openWebView={openWebView}></HomeQuickDemo>
+              openWebView={openWebView}
+            />
           </View>
         </Content>
       </Container>

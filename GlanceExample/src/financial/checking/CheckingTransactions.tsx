@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import {Left, List, ListItem, Right, Text} from 'native-base';
 import Masking from '../../scaffolding/components/Masking';
 import * as styles from '../shared/styles/transactions';

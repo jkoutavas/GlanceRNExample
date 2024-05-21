@@ -7,7 +7,7 @@ import {signalHealthcarePresence} from '../scaffolding/helpers/visitorSession';
 import Header from './shared/Header';
 import Card from './shared/Card';
 
-import Styles from '../globalStyles';
+import {Styles} from '../globalStyles';
 
 const CARDS_JSON = [
   {
@@ -89,7 +89,7 @@ class HealthcareMain extends Component {
     });
     return (
       <Container style={styles.component}>
-        <Header showHomeButton={true} showSettingsButton={true}></Header>
+        <Header showHomeButton={true} showSettingsButton={true} />
 
         <Content contentContainerStyle={styles.content}>
           <View style={styles.view}>

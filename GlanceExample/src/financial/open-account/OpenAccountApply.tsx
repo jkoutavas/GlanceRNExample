@@ -17,9 +17,7 @@ class FinancialOpenAccountApply extends Component {
 
         <TouchableOpacity onPress={this.props.startSession}>
           <View style={styles.help}>
-            <GlanceIcon
-              name="icon-customer-support"
-              style={styles.icon}></GlanceIcon>
+            <GlanceIcon name="icon-customer-support" style={styles.icon} />
 
             <View style={styles.text}>
               <Text style={styles.primary}>Need Help?</Text>

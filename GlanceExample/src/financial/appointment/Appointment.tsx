@@ -9,9 +9,7 @@ export default class Appointment extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <HeaderDefault
-          showBackButton={true}
-          title="Appointment"></HeaderDefault>
+        <HeaderDefault showBackButton={true} title="Appointment" />
 
         <Content>
           <View style={styles.question}>

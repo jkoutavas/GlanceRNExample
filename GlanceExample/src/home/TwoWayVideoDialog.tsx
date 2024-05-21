@@ -13,7 +13,7 @@ import {startSession} from '../scaffolding/helpers/visitorSession';
 import HomeHeader from './HomeHeader';
 import GlanceIcon from '../scaffolding/components/GlanceIcon';
 
-import Styles from '../globalStyles';
+import {Styles} from '../globalStyles';
 import {signalPresence, statuses} from '../scaffolding/helpers/visitorSession';
 
 import CONSTANTS from '../utils/constants';
@@ -67,7 +67,8 @@ export default class TwoWayVideoDialog extends Component {
         <HomeHeader
           text="2-Way Video"
           showHomeButton={false}
-          showBackButton={true}></HomeHeader>
+          showBackButton={true}
+        />
         <Content contentContainerStyle={styles.content}>
           <View style={styles.view}>
             <View style={{paddingTop: 20, paddingBottom: 50}}>

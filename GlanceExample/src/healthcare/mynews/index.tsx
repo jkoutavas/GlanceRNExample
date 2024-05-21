@@ -6,7 +6,7 @@ import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
 import Card from './Card';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 const CARDS_JSON = [

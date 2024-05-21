@@ -1,28 +1,15 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {connect} from 'react-redux';
-import {
-  Container,
-  Content,
-  Button,
-  Text,
-  List,
-  ListItem,
-  Left,
-  Body,
-  Right,
-  Icon,
-} from 'native-base';
+import {Container, Content, Button, Text} from 'native-base';
 
 import {storeMonthlyAmount} from '../../redux/healthcare';
 import RadioButton from '../../scaffolding/components/RadioButton';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
-import Banner from '../shared/Banner';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 class MonthlyAmount extends Component {

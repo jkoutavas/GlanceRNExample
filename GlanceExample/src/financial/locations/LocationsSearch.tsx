@@ -7,12 +7,13 @@ export default class LocationsSearch extends Component {
     return (
       <View style={styles.component}>
         <Item rounded style={styles.item}>
-          <Icon name="ios-search" size={18} style={styles.icon}></Icon>
+          <Icon name="ios-search" size={18} style={styles.icon} />
 
           <Input
             style={styles.input}
             placeholder="Enter ZIP Code or City, State"
-            placeholderTextColor={'#8E8E93'}></Input>
+            placeholderTextColor={'#8E8E93'}
+          />
         </Item>
       </View>
     );

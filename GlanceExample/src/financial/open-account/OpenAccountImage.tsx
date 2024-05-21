@@ -7,7 +7,8 @@ export default class FinancialOpenAccountImage extends Component {
       <View style={styles.view}>
         <Image
           source={require('../../../resources/images/market.png')}
-          style={styles.image}></Image>
+          style={styles.image}
+        />
       </View>
     );
   }

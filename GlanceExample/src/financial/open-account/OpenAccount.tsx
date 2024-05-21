@@ -12,7 +12,7 @@ export default class OpenAccount extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <HeaderModal theme="blue" title="Open an Account"></HeaderModal>
+        <HeaderModal theme="blue" title="Open an Account" />
 
         <Content contentContainerStyle={styles.content}>
           <View style={styles.view}>
@@ -20,7 +20,7 @@ export default class OpenAccount extends Component {
             <OpenAccountHeading />
             <OpenAccountContent />
 
-            <OpenAccountApply startSession={startSession}></OpenAccountApply>
+            <OpenAccountApply startSession={startSession} />
           </View>
         </Content>
       </Container>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-import MapView from './MapView.js';
+import MapView from './MapView';
 
 export default class LocationsMap extends Component {
   render() {

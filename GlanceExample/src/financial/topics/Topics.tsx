@@ -10,12 +10,12 @@ export default class Topics extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <HeaderModal theme="green" title="Help"></HeaderModal>
+        <HeaderModal theme="green" title="Help" />
 
         <Content>
           <TopicsList />
 
-          <TopicsOptions startSession={startSession}></TopicsOptions>
+          <TopicsOptions startSession={startSession} />
         </Content>
       </Container>
     );

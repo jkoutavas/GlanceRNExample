@@ -27,15 +27,13 @@ class HomeQuickDemo extends Component {
                 }}
                 style={[styles.button]}
                 elevation={0}>
-                <GlanceIcon
-                  name="icon-screenshare"
-                  style={styles.browser}></GlanceIcon>
+                <GlanceIcon name="icon-screenshare" style={styles.browser} />
 
                 <Text
                   allowFontScaling={false}
                   style={[styles.text]}
                   uppercase={false}>
-                  {`START\nScreen Share`}
+                  {'START\nScreen Share'}
                 </Text>
               </Button>
             )}
@@ -51,9 +49,7 @@ class HomeQuickDemo extends Component {
                 onPress={() => this.props.stopVisitorSession()}
                 style={[styles.button, styles.buttonDisabled]}
                 elevation={0}>
-                <GlanceIcon
-                  name="icon-screenshare"
-                  style={styles.browser}></GlanceIcon>
+                <GlanceIcon name="icon-screenshare" style={styles.browser} />
 
                 <Text
                   allowFontScaling={false}
@@ -70,9 +66,7 @@ class HomeQuickDemo extends Component {
               }
               style={styles.button}
               elevation={0}>
-              <GlanceIcon
-                name="icon-two-way"
-                style={styles.browser}></GlanceIcon>
+              <GlanceIcon name="icon-two-way" style={styles.browser} />
 
               <Text
                 allowFontScaling={false}
@@ -87,7 +81,7 @@ class HomeQuickDemo extends Component {
               style={styles.button}
               onPress={this.props.showImagePicker}
               elevation={0}>
-              <GlanceIcon name="icon-photos" style={styles.photos}></GlanceIcon>
+              <GlanceIcon name="icon-photos" style={styles.photos} />
 
               <Text
                 allowFontScaling={false}
@@ -101,9 +95,7 @@ class HomeQuickDemo extends Component {
               onPress={this.props.openWebView}
               style={styles.button}
               elevation={0}>
-              <GlanceIcon
-                name="icon-web-browser"
-                style={styles.browser}></GlanceIcon>
+              <GlanceIcon name="icon-web-browser" style={styles.browser} />
 
               <Text
                 allowFontScaling={false}

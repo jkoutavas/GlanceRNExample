@@ -9,9 +9,7 @@ export default class Savings extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <HeaderDefault
-          showBackButton={true}
-          title="Savings Account"></HeaderDefault>
+        <HeaderDefault showBackButton={true} title="Savings Account" />
 
         <Content>
           <SavingsBalance />

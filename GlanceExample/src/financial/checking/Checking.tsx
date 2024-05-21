@@ -9,9 +9,7 @@ export default class Checking extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <HeaderDefault
-          showBackButton={true}
-          title="Checking Account"></HeaderDefault>
+        <HeaderDefault showBackButton={true} title="Checking Account" />
 
         <Content>
           <CheckingBalance />

@@ -8,15 +8,12 @@ import {
   Text,
   List,
   ListItem,
-  Left,
   Body,
   Right,
-  Icon,
 } from 'native-base';
 
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
-import Banner from '../shared/Banner';
 
 import Styles from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
@@ -130,9 +127,7 @@ class AutoPay extends Component {
                   </Text>
                 </Body>
                 <Right style={{flex: 0.1}}>
-                  <GlanceIcon
-                    name="icon-chevron"
-                    style={styles.iconChevron}></GlanceIcon>
+                  <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
                 </Right>
               </ListItem>
               <ListItem
@@ -146,9 +141,7 @@ class AutoPay extends Component {
                   </Text>
                 </Body>
                 <Right style={{flex: 0.1}}>
-                  <GlanceIcon
-                    name="icon-chevron"
-                    style={styles.iconChevron}></GlanceIcon>
+                  <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
                 </Right>
               </ListItem>
               <ListItem
@@ -162,9 +155,7 @@ class AutoPay extends Component {
                   </Text>
                 </Body>
                 <Right style={{flex: 0.1}}>
-                  <GlanceIcon
-                    name="icon-chevron"
-                    style={styles.iconChevron}></GlanceIcon>
+                  <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
                 </Right>
               </ListItem>
             </List>

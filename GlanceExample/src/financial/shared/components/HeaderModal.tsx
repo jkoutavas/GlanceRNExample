@@ -20,7 +20,8 @@ class HeaderModal extends Component {
             styles.globe,
             this.props.theme === 'blue' && styles.globeBlue,
             this.props.theme === 'green' && styles.globeGreen,
-          ]}></GlanceIcon>
+          ]}
+        />
 
         <Left style={styles.left}>
           <Button
@@ -34,7 +35,7 @@ class HeaderModal extends Component {
           <Title style={styles.title}>{this.props.title}</Title>
         </Body>
 
-        <Right></Right>
+        <Right />
       </Header>
     );
   }

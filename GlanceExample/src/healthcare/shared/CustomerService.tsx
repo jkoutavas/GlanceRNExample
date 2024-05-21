@@ -6,7 +6,7 @@ import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 import {startSession} from '../../scaffolding/helpers/visitorSession';
 
 import Header from './Header';
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 export default class CustomerService extends Component {
@@ -16,7 +16,7 @@ export default class CustomerService extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <Header showHomeButton={true} showSettingsButton={true}></Header>
+        <Header showHomeButton={true} showSettingsButton={true} />
 
         <Content contentContainerStyle={styles.content}>
           <View style={styles.view}>

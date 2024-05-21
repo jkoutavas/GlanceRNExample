@@ -41,9 +41,7 @@ class Bills extends Component {
               </Text>
             </View>
             <View style={styles.right}>
-              <GlanceIcon
-                name="icon-chevron"
-                style={styles.iconChevron}></GlanceIcon>
+              <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
             </View>
           </View>
           <View style={styles.card}>
@@ -80,9 +78,7 @@ class Bills extends Component {
                 </Text>
               </View>
               <View>
-                <GlanceIcon
-                  name="icon-chevron"
-                  style={styles.iconChevron}></GlanceIcon>
+                <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
               </View>
             </View>
           </View>

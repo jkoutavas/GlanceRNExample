@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
-import {connect} from 'react-redux';
-import {Container, Content, Text, Button, Icon} from 'native-base';
+import {Container, Content, Text, Button} from 'native-base';
 
 import RadioButton from '../../scaffolding/components/RadioButton';
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
 export default class EnrollmentApplication extends Component {
@@ -39,25 +38,24 @@ export default class EnrollmentApplication extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={styles.input}
                 value={this.state.fullName}
-                onChangeText={text =>
-                  this.setState({fullName: text})
-                }></TextInput>
+                onChangeText={text => this.setState({fullName: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Home Address"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.homeAddress}
-                onChangeText={text =>
-                  this.setState({homeAddress: text})
-                }></TextInput>
+                onChangeText={text => this.setState({homeAddress: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="City"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.city}
-                onChangeText={text => this.setState({city: text})}></TextInput>
+                onChangeText={text => this.setState({city: text})}
+              />
               <View
                 style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <TextInput
@@ -66,9 +64,8 @@ export default class EnrollmentApplication extends Component {
                   placeholderTextColor={'rgba(0,0,0,0.5)'}
                   style={[styles.input, {borderTopWidth: 0, width: '50%'}]}
                   value={this.state.state}
-                  onChangeText={text =>
-                    this.setState({state: text})
-                  }></TextInput>
+                  onChangeText={text => this.setState({state: text})}
+                />
                 <TextInput
                   autoCapitalize={'none'}
                   placeholder="ZIP"
@@ -78,7 +75,8 @@ export default class EnrollmentApplication extends Component {
                     {borderTopWidth: 0, borderLeftWidth: 0, width: '50%'},
                   ]}
                   value={this.state.zip}
-                  onChangeText={text => this.setState({zip: text})}></TextInput>
+                  onChangeText={text => this.setState({zip: text})}
+                />
               </View>
               <TextInput
                 autoCapitalize={'none'}
@@ -86,30 +84,32 @@ export default class EnrollmentApplication extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.phone}
-                onChangeText={text => this.setState({phone: text})}></TextInput>
+                onChangeText={text => this.setState({phone: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Email Address"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.email}
-                onChangeText={text => this.setState({email: text})}></TextInput>
+                onChangeText={text => this.setState({email: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Date of Birth (mm/dd/yyyy)"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.startDate}
-                onChangeText={text =>
-                  this.setState({startDate: text})
-                }></TextInput>
+                onChangeText={text => this.setState({startDate: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Social Security Number"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.ssn}
-                onChangeText={text => this.setState({ssn: text})}></TextInput>
+                onChangeText={text => this.setState({ssn: text})}
+              />
               <View style={{flexDirection: 'row', marginVertical: 20}}>
                 <Text style={styles.questionText}>Sex</Text>
                 <RadioButton
@@ -153,27 +153,24 @@ export default class EnrollmentApplication extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={styles.input}
                 value={this.state.employerName}
-                onChangeText={text =>
-                  this.setState({fullName: text})
-                }></TextInput>
+                onChangeText={text => this.setState({fullName: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Employer Address"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.workAddress}
-                onChangeText={text =>
-                  this.setState({workAddress: text})
-                }></TextInput>
+                onChangeText={text => this.setState({workAddress: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="City"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.workCity}
-                onChangeText={text =>
-                  this.setState({workCity: text})
-                }></TextInput>
+                onChangeText={text => this.setState({workCity: text})}
+              />
               <View
                 style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <TextInput
@@ -182,9 +179,8 @@ export default class EnrollmentApplication extends Component {
                   placeholderTextColor={'rgba(0,0,0,0.5)'}
                   style={[styles.input, {borderTopWidth: 0, width: '50%'}]}
                   value={this.state.workState}
-                  onChangeText={text =>
-                    this.setworkState({state: text})
-                  }></TextInput>
+                  onChangeText={text => this.setworkState({state: text})}
+                />
                 <TextInput
                   autoCapitalize={'none'}
                   placeholder="ZIP"
@@ -194,9 +190,8 @@ export default class EnrollmentApplication extends Component {
                     {borderTopWidth: 0, borderLeftWidth: 0, width: '50%'},
                   ]}
                   value={this.state.workZip}
-                  onChangeText={text =>
-                    this.setState({workZip: text})
-                  }></TextInput>
+                  onChangeText={text => this.setState({workZip: text})}
+                />
               </View>
               <TextInput
                 autoCapitalize={'none'}
@@ -204,16 +199,16 @@ export default class EnrollmentApplication extends Component {
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {borderTopWidth: 0}]}
                 value={this.state.workPhone}
-                onChangeText={text =>
-                  this.setState({workPhone: text})
-                }></TextInput>
+                onChangeText={text => this.setState({workPhone: text})}
+              />
               <TextInput
                 autoCapitalize={'none'}
                 placeholder="Wages/tips (before taxes)"
                 placeholderTextColor={'rgba(0,0,0,0.5)'}
                 style={[styles.input, {marginTop: 20}]}
                 value={this.state.wages}
-                onChangeText={text => this.setState({wages: text})}></TextInput>
+                onChangeText={text => this.setState({wages: text})}
+              />
               <View style={{marginTop: 20}}>
                 <Text style={styles.questionText}>
                   In the past year, did you:

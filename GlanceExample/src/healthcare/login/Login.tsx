@@ -9,7 +9,7 @@ import SubHeader from '../shared/SubHeader';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 
 export default class Login extends Component {
   componentDidMount() {
@@ -18,9 +18,7 @@ export default class Login extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <LoginHeader
-          showHomeButton={true}
-          showSettingsButton={true}></LoginHeader>
+        <LoginHeader showHomeButton={true} showSettingsButton={true} />
         <SubHeader color="white" text="Sign In" hideBackButton />
         <View style={styles.registerBanner}>
           <View style={{width: '55%'}}>

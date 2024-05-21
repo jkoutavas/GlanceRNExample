@@ -12,7 +12,7 @@ export default class YourApplication extends Component {
   render() {
     return (
       <Container style={styles.component}>
-        <HeaderModal theme="blue" title="Your Application"></HeaderModal>
+        <HeaderModal theme="blue" title="Your Application" />
 
         <YourApplicationHelp />
 

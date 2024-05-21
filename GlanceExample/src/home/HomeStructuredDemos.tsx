@@ -15,15 +15,13 @@ class HomeStructuredDemos extends Component {
           onPress={() => this.props.navigation.navigate('FinancialLogin')}
           style={styles.button}
           elevation={0}>
-          <GlanceIcon name="icon-banking" style={styles.icon}></GlanceIcon>
+          <GlanceIcon name="icon-banking" style={styles.icon} />
 
           <Text uppercase={false} style={styles.text}>
             Financial App
           </Text>
 
-          <GlanceIcon
-            name="icon-chevron"
-            style={styles.iconChevron}></GlanceIcon>
+          <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
         </Button>
 
         <Button
@@ -31,15 +29,13 @@ class HomeStructuredDemos extends Component {
           onPress={() => this.props.navigation.navigate('HealthcareLogin')}
           style={styles.button}
           elevation={0}>
-          <GlanceIcon name="icon-medical" style={styles.icon}></GlanceIcon>
+          <GlanceIcon name="icon-medical" style={styles.icon} />
 
           <Text uppercase={false} style={styles.text}>
             Healthcare App
           </Text>
 
-          <GlanceIcon
-            name="icon-chevron"
-            style={styles.iconChevron}></GlanceIcon>
+          <GlanceIcon name="icon-chevron" style={styles.iconChevron} />
         </Button>
       </View>
     );

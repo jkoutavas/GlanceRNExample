@@ -13,7 +13,8 @@ export default class Login extends Component {
         <HeaderDefault
           showHomeButton={true}
           showSettingsButton={true}
-          title="Global Investments"></HeaderDefault>
+          title="Global Investments"
+        />
 
         <Content contentContainerStyle={styles.content}>
           <View style={styles.view}>

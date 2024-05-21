@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Input, Text} from 'native-base';
 import RadioButton from '../../scaffolding/components/RadioButton';
@@ -67,32 +67,38 @@ export default class YourApplicationForm extends Masking {
           <Input
             placeholder="First Name (Legal name)*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="Middle Initial"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="Last Name*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="City*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="State*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="Zip Code*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.section}>
@@ -100,22 +106,26 @@ export default class YourApplicationForm extends Masking {
             nativeID="masked"
             placeholder="Social Security Number (SSN)*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="Date of Birth*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="Daytime Phone*"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
 
           <Input
             placeholder="Evening Phone"
             placeholderTextColor={placeholderTextColor}
-            style={styles.input}></Input>
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.submit}>

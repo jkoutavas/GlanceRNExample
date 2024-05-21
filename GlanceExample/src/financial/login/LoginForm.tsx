@@ -45,7 +45,8 @@ class LoginForm extends Component {
           placeholderTextColor={placeholderTextColor}
           style={styles.input}
           value={this.state.username}
-          onChangeText={text => this.setState({username: text})}></TextInput>
+          onChangeText={text => this.setState({username: text})}
+        />
 
         <TextInput
           autoCapitalize={'none'}
@@ -53,7 +54,8 @@ class LoginForm extends Component {
           placeholderTextColor={placeholderTextColor}
           secureTextEntry={true}
           style={styles.input}
-          value={'password'}></TextInput>
+          value={'password'}
+        />
 
         <TouchableOpacity>
           <Text style={styles.text}>Forgot Name or Passcode?</Text>

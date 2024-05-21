@@ -11,7 +11,8 @@ export default class FinancialFooter extends Component {
           <Button style={styles.button} transparent>
             <GlanceIcon
               name="icon-bank-accounts"
-              style={[styles.icon, styles.active]}></GlanceIcon>
+              style={[styles.icon, styles.active]}
+            />
 
             <Text allowFontScaling={false} style={[styles.text, styles.active]}>
               Accounts
@@ -24,7 +25,8 @@ export default class FinancialFooter extends Component {
             transparent>
             <GlanceIcon
               name="icon-logout"
-              style={[styles.icon, styles.logout]}></GlanceIcon>
+              style={[styles.icon, styles.logout]}
+            />
 
             <Text allowFontScaling={false} style={styles.text}>
               Log Out
@@ -35,9 +37,7 @@ export default class FinancialFooter extends Component {
             onPress={() => this.props.navigation.navigate('OpenAccount')}
             style={styles.button}
             transparent>
-            <GlanceIcon
-              name="icon-investments-chart"
-              style={styles.icon}></GlanceIcon>
+            <GlanceIcon name="icon-investments-chart" style={styles.icon} />
 
             <Text allowFontScaling={false} style={styles.text}>
               Investments
@@ -48,7 +48,7 @@ export default class FinancialFooter extends Component {
             onPress={() => this.props.navigation.navigate('Help')}
             style={styles.button}
             transparent>
-            <GlanceIcon name="icon-help" style={styles.icon}></GlanceIcon>
+            <GlanceIcon name="icon-help" style={styles.icon} />
 
             <Text allowFontScaling={false} style={styles.text}>
               Help
