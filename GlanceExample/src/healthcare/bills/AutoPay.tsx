@@ -15,7 +15,7 @@ import {
 import Header from '../shared/Header';
 import SubHeader from '../shared/SubHeader';
 
-import Styles from '../../globalStyles';
+import {Styles} from '../../globalStyles';
 import {signalHealthcarePresence} from '../../scaffolding/helpers/visitorSession';
 import GlanceIcon from '../../scaffolding/components/GlanceIcon';
 
