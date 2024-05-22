@@ -1,117 +1,59 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React, {useEffect} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
+  NativeEventEmitter,
+  NativeModules,
   StyleSheet,
   Text,
-  useColorScheme,
-  View,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {PersistGate} from 'redux-persist/integration/react';
+import {Provider} from 'react-redux';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {CONSTANTS} from './utils/constants';
+import {persistor, store} from './src/redux/store';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const GlanceEventEmitter = NativeModules.GlanceEventEmitter;
+const eventEmitter = new NativeEventEmitter(GlanceEventEmitter);
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+const GlanceBridge = NativeModules.GlanceBridge;
+const {GLANCE_EVENT_LISTENER_KEY, EventPresenceConnected} =
+  GlanceBridge.getConstants();
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const onGlanceEvent = eventEmitter.addListener(
+    GLANCE_EVENT_LISTENER_KEY,
+    async event => {
+      if (event.code === EventPresenceConnected) {
+        const jsonValue = JSON.stringify(statuses.agentConnected);
+        await AsyncStorage.setItem(
+          CONSTANTS.Settings.PRESENCE_STATUS,
+          jsonValue,
+        );
+      }
+    },
+  );
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  useEffect(() => {
+    AsyncStorage.removeItem(CONSTANTS.Settings.SESSION_STATUS);
+    return onGlanceEvent.remove();
+  }, [onGlanceEvent]);
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <Text style={styles.title}>Hello, world.</Text>
+        </PersistGate>
+      </Provider>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
+  title: {
     fontSize: 24,
     fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
   },
 });
 
