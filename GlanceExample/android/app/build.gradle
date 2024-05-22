@@ -118,6 +118,9 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    def glanceCoreSdkVersion = "6.8.5.0-beta-rn-impl"
+    implementation "net.glance.android:glance-android-core-sdk:$glanceCoreSdkVersion"
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
