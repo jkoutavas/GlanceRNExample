@@ -1,11 +1,29 @@
 package com.glanceexample;
 
+import android.content.Intent;
+
+import androidx.annotation.Nullable;
+
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
 
+import net.glance.android.HostSession;
+import net.glance.android.Glance;
+
 public class MainActivity extends ReactActivity {
+
+  public void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == HostSession.REQUEST_SCREEN_SHARE && Glance.isInSession()) {
+        if (resultCode == -1) {
+            Glance.onCaptureScreenPermissionSuccess(data);
+        } else if (resultCode == 0) {
+            Glance.onCaptureScreenPermissionFailure();
+         }
+    }
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule

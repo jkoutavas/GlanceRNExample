@@ -2,8 +2,8 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "33.0.0"
-        minSdkVersion = 21
+        buildToolsVersion = "33.0.3"
+        minSdkVersion = 24
         compileSdkVersion = 33
         targetSdkVersion = 33
 
@@ -17,5 +17,12 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
+    }
+    allprojects {
+        repositories {
+
+        // Glance SDK
+        maven { url 'https://gitlab.com/api/v4/projects/48670956/packages/maven' }
+        }
     }
 }
