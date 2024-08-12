@@ -1195,6 +1195,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
+"@glance-networks/reactnative-bridge@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@glance-networks/reactnative-bridge/-/reactnative-bridge-0.1.1.tgz#b7b43285bb9ae9f16b909404e119244f9f0ebdd1"
+  integrity sha512-8136JXbO1OL3kbU2P+UawFNGK6eT+YrjZ3KIWJZjJ0Qpd93MGElpXBfieYEjZdnepuU12K68cGQ1JbDIMA1xTg==
+
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
