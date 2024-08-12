@@ -1,11 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React, {Component} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -27,8 +20,8 @@ import {
   addMaskedViewId,
   removeMaskedViewId,
   init,
-  startSession,
-  endSession,
+  startSession as startSessionFromPackage,
+  endSession as endSessionFromPackage,
   getVisitorCallId,
   isInSession,
   isVideoAvailable,
@@ -56,124 +49,91 @@ const {
 
 const eventEmitter = new NativeEventEmitter(GlanceBridge);
 
-interface AppState {
-  version: string;
-  key: string;
-  modalVisible: boolean;
-  modalText: string;
-  showModalButtons: boolean;
-}
+const App: React.FC = () => {
+  const [version, setVersion] = useState('');
+  const [key, setKey] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalText, setModalText] = useState('');
+  const [showModalButtons, setShowModalButtons] = useState(true);
+  const logoViewRef = useRef<Text>(null);
 
-class App extends Component<{}, AppState> {
-  private logoViewRef: React.RefObject<Text>;
-
-  constructor(props: any) {
-    super(props);
-
-    this.logoViewRef = React.createRef();
-
-    this.state = {
-      version: '',
-      key: '',
-      modalVisible: false,
-      modalText: '',
-      showModalButtons: true,
-    };
-
-    this.startSession = this.startSession.bind(this);
-    this.endSession = this.endSession.bind(this);
-    this.showConfirmationModal = this.showConfirmationModal.bind(this);
-    this.showAlertModal = this.showAlertModal.bind(this);
-    this.handleYes = this.handleYes.bind(this);
-    this.hideModal = this.hideModal.bind(this);
-    this.testActions = this.testActions.bind(this);
-  }
-
-  onGlanceEvent = eventEmitter.addListener(
-    GLANCE_EVENT_LISTENER_KEY,
-    async event => {
-      console.log('RECEIVED EVENT >>>', event);
-
-      if (event.code === EventConnectedToSession) {
-        this.setState({
-          modalText: `Session Code: ${event[SESSION_KEY_MAP_KEY]}`,
-        });
-        this.showAlertModal();
-      } else if (event.code === EventGuestCountChange) {
-        this.hideModal();
-      } else if (event.code === EventSessionEnded) {
-        endSession();
-      }
-    },
-  );
-
-  async componentDidMount() {
-    const reactTag = findNodeHandle(this.logoViewRef.current);
+  useEffect(() => {
+    const reactTag = findNodeHandle(logoViewRef.current);
     addMaskedViewId(reactTag || 0, 'MASKED 1');
 
-    const version = await getVersion();
-    this.setState({version: version});
+    const fetchVersion = async () => {
+      const ver = await getVersion();
+      setVersion(ver);
 
-    const visitorInitParams = new VisitorInitParams(21489);
-    const dataMap = toJSON(visitorInitParams);
+      const visitorInitParams = new VisitorInitParams(21489);
+      const dataMap = toJSON(visitorInitParams);
 
-    init(dataMap);
-  }
+      init(dataMap);
+    };
 
-  componentWillUnmount() {
-    this.onGlanceEvent.remove();
-  }
+    fetchVersion();
 
-  showConfirmationModal() {
-    this.setState({
-      modalVisible: true,
-      showModalButtons: true,
-    });
-  }
+    const onGlanceEvent = eventEmitter.addListener(
+      GLANCE_EVENT_LISTENER_KEY,
+      async event => {
+        console.log('RECEIVED EVENT >>>', event);
 
-  showAlertModal() {
-    this.setState({
-      modalVisible: true,
-      showModalButtons: false,
-    });
-  }
+        if (event.code === EventConnectedToSession) {
+          setModalText(`Session Code: ${event[SESSION_KEY_MAP_KEY]}`);
+          showAlertModal();
+        } else if (event.code === EventGuestCountChange) {
+          hideModal();
+        } else if (event.code === EventSessionEnded) {
+          endSessionFromPackage();
+        }
+      },
+    );
 
-  handleYes() {
-    endSession();
-    this.setState({modalVisible: false});
-  }
+    return () => {
+      onGlanceEvent.remove();
+    };
+  }, []);
 
-  hideModal() {
-    this.setState({modalVisible: false});
-  }
+  const showConfirmationModal = () => {
+    setModalVisible(true);
+    setShowModalButtons(true);
+  };
 
-  startSession() {
+  const showAlertModal = () => {
+    setModalVisible(true);
+    setShowModalButtons(false);
+  };
+
+  const handleYes = () => {
+    endSessionFromPackage();
+    setModalVisible(false);
+  };
+
+  const hideModal = () => {
+    setModalVisible(false);
+  };
+
+  const startSession = () => {
     const startParams = new StartParams();
     startParams.videoMode = 'videooff';
 
-    if (this.state.key.trim().length > 0) {
-      startParams.key = this.state.key;
+    if (key.trim().length > 0) {
+      startParams.key = key;
     }
 
     const dataMap = toJSON(startParams);
     dataMap[START_PARAMS_ENCRYPT_MAP_KEY] = true;
 
-    startSession(dataMap);
-  }
-
-  endSession() {
-    this.setState({
-      modalText: 'End session?',
-    });
-    this.showConfirmationModal();
-  }
-
-  setKey = (text: string) => {
-    this.setState({key: text});
+    startSessionFromPackage(dataMap);
   };
 
-  async testActions(): Promise<void> {
-    const reactTag = findNodeHandle(this.logoViewRef.current) as number;
+  const confirmEndSession = () => {
+    setModalText('End session?');
+    showConfirmationModal();
+  };
+
+  const testActions = async (): Promise<void> => {
+    const reactTag = findNodeHandle(logoViewRef.current) as number;
     removeMaskedViewId(reactTag);
 
     const callId = await getVisitorCallId();
@@ -204,70 +164,62 @@ class App extends Component<{}, AppState> {
 
     const getVisitorIdRes = await getVisitorId();
     console.log('Visitor Id:', `${getVisitorIdRes}`);
-  }
+  };
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <View>
-          <Text>SDK Version: {this.state.version}</Text>
-        </View>
-
-        <Text style={styles.text} ref={this.logoViewRef}>
-          Glance SDK
-        </Text>
-
-        <Text style={styles.label}>Enter Key:</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={this.setKey}
-          value={this.state.key}
-          placeholder="Type Key..."
-        />
-
-        <Button title="Start Session" onPress={this.startSession} />
-
-        <Button title="End Session" onPress={this.endSession} />
-
-        <Button title="Test Actions" onPress={this.testActions} />
-
-        <Modal
-          animationType="fade"
-          transparent={true}
-          visible={this.state.modalVisible}
-          onRequestClose={() => this.setState({modalVisible: false})}>
-          <View style={styles.modalBackground}>
-            <View style={styles.modalContainer}>
-              <Text style={styles.modalText}>{this.state.modalText}</Text>
-              {this.state.showModalButtons ? (
-                <View style={styles.buttonContainer}>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={this.handleYes}>
-                    <Text style={styles.buttonText}>Yes</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={this.hideModal}>
-                    <Text style={styles.buttonText}>No</Text>
-                  </TouchableOpacity>
-                </View>
-              ) : (
-                <View style={styles.buttonContainer}>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={this.hideModal}>
-                    <Text style={styles.buttonText}>Ok</Text>
-                  </TouchableOpacity>
-                </View>
-              )}
-            </View>
-          </View>
-        </Modal>
+  return (
+    <View style={styles.container}>
+      <View>
+        <Text>SDK Version: {version}</Text>
       </View>
-    );
-  }
-}
+
+      <Text style={styles.text} ref={logoViewRef}>
+        Glance SDK
+      </Text>
+
+      <Text style={styles.label}>Enter Key:</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={setKey}
+        value={key}
+        placeholder="Type Key..."
+      />
+
+      <Button title="Start Session" onPress={startSession} />
+
+      <Button title="End Session" onPress={confirmEndSession} />
+
+      <Button title="Test Actions" onPress={testActions} />
+
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}>
+        <View style={styles.modalBackground}>
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalText}>{modalText}</Text>
+            {showModalButtons ? (
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={handleYes}>
+                  <Text style={styles.buttonText}>Yes</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={hideModal}>
+                  <Text style={styles.buttonText}>No</Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={hideModal}>
+                  <Text style={styles.buttonText}>Ok</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
