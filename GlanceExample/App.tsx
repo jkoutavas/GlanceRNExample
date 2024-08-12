@@ -94,14 +94,14 @@ class App extends Component<{}, AppState> {
     async event => {
       console.log('RECEIVED EVENT >>>', event);
 
-      if (event.code == EventConnectedToSession) {
+      if (event.code === EventConnectedToSession) {
         this.setState({
           modalText: `Session Code: ${event[SESSION_KEY_MAP_KEY]}`,
         });
         this.showAlertModal();
-      } else if (event.code == EventGuestCountChange) {
+      } else if (event.code === EventGuestCountChange) {
         this.hideModal();
-      } else if (event.code == EventSessionEnded) {
+      } else if (event.code === EventSessionEnded) {
         endSession();
       }
     },
@@ -109,7 +109,7 @@ class App extends Component<{}, AppState> {
 
   async componentDidMount() {
     const reactTag = findNodeHandle(this.logoViewRef.current);
-    addMaskedViewId(reactTag, 'MASKED 1');
+    addMaskedViewId(reactTag || 0, 'MASKED 1');
 
     const version = await getVersion();
     this.setState({version: version});
@@ -163,7 +163,7 @@ class App extends Component<{}, AppState> {
 
   endSession() {
     this.setState({
-      modalText: `End session?`,
+      modalText: 'End session?',
     });
     this.showConfirmationModal();
   }
